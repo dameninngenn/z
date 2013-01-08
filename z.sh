@@ -195,7 +195,7 @@ if compctl &> /dev/null; then
   read -l compl
   reply=(${(f)"$(_z --complete "$compl")"})
  }
- compctl -U -K _z_zsh_tab_completion _z
+ compctl -U -K _z_zsh_tab_completion ${_Z_CMD:-z}
 elif complete &> /dev/null; then
  # bash tab completion
  complete -o filenames -C '_z --complete "$COMP_LINE"' ${_Z_CMD:-z}
